@@ -1,0 +1,183 @@
+" Author: Stephen Wang
+
+" Section: General
+" Vundle Config {{{
+" Installation
+" git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'flazz/vim-colorschemes'
+"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'wyyqyl/taglist.vim'
+Plugin 'bling/vim-airline'
+Plugin 'kien/ctrlp.vim'
+Plugin 'rking/ag.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'elzr/vim-json'
+Plugin 'fatih/vim-go'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+" }}}
+" Colors {{{
+if has("gui_running")
+    set guioptions-=T  " no toolbar
+    colorscheme badwolf
+else
+    set t_Co=256
+    colorscheme molokai
+endif
+syntax enable           " enable syntax processing
+" }}}
+" Spaces & Tabs {{{
+" http://vim.wikia.com/wiki/Indenting_source_code
+set tabstop=4           " number of visual spaces per tab
+set softtabstop=4       " number of spaces in tab when editing
+set shiftwidth=4
+set expandtab           " use spaces for tabs
+set autoindent
+set list
+set listchars=tab:▸\ ,eol:¬
+" }}}
+" UI Layout {{{
+set number              " show line numbers
+set showcmd             " show command in bottom bar
+set cursorline          " highlight current line
+set wildmenu
+"set lazyredraw
+set showmatch           " higlight matching parenthesis
+set laststatus=2        " always show status line
+set scrolloff=7         " keep 7 lines below and above the cursor
+let g:netrw_liststyle = 3   " tree style
+" }}}
+" Backup {{{
+set backupdir-=.
+set backupdir^=/tmp
+" }}}
+" Searching {{{
+set ignorecase          " ignore case when searching
+set incsearch           " search as characters are entered
+set hlsearch            " highlight all matches
+" }}}
+" Folding {{{
+"=== folding ===
+"set foldmethod=indent   " fold based on indent level
+"set foldnestmax=10      " max 10 depth
+"set foldenable          " don't fold files by default on open
+nnoremap <space> za
+"set foldlevelstart=10    " start with fold level of 1
+" }}}
+" Line Shortcuts {{{
+nnoremap j gj
+nnoremap k gk
+"nnoremap B ^
+"nnoremap E $
+"nnoremap $ <nop>
+"nnoremap ^ <nop>
+nnoremap gV `[v`]
+" }}}
+" Leader Shortcuts {{{
+let mapleader=","
+nnoremap <leader>ev :vsp $MYVIMRC<cr>
+nnoremap <leader>ez :vsp ~/.zshrc<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader><space> :noh<cr>
+nnoremap <leader>s :mksession<cr>
+nnoremap <leader>1 :set number!<cr>
+vnoremap <leader>y "+y
+nnoremap <leader>p "+p
+nnoremap <leader>o o<esc>
+nnoremap <leader>O O<esc>
+nnoremap <leader>q :wq<cr>
+nnoremap <leader>j :%!python -m json.tool<cr>
+" }}}
+" Window {{{
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+" }}}
+" Misc {{{
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+inoremap jk <esc>
+inoremap <F2> <ESC>u@.
+" }}}
+
+" Section: Plugins
+" YouCompleteMe {{{
+let g:ycm_confirm_extra_conf = 0
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+nnoremap <leader>jd :YcmCompleter GoTo<cr>
+" }}}
+" Syntastic {{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wv = 0
+" }}}
+" NERDTree {{{
+" open a NERDTree automatically when vim starts up if no files were specified
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+let g:NERDTreeWinPos = "left"
+nnoremap <leader>n :NERDTreeToggle<cr>
+" }}}
+" Taglist {{{
+let Tlist_Use_Right_Window = 1
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_Inc_Winwidth = 0
+nnoremap <leader>t :TlistToggle<cr>
+" }}}
+" CtrlP {{{
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\vtmp/|[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(o|so|jar|bin|swp)$',
+    \ }
+let g:ctrlp_user_command = 'find %s -type f'
+" }}}
+" The Silver Searcher {{{
+nnoremap <leader>a :Ag -i<space>
+" }}}
+" Gundo {{{
+nnoremap <leader>u :GundoToggle<cr>
+" }}}
+" ultisnips {{{
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger = '<c-j>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+let g:UltiSnipsListSnippets = '<c-l>'
+" }}}
+" vim-json {{{
+let g:vim_json_syntax_conceal = 0
+" }}}
+
+" vim:foldmethod=marker:foldlevel=0
