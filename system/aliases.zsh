@@ -21,3 +21,4 @@ alias -s bz2='tar xjvf'
 # convenient for editing configs
 alias ev='vim ~/.vimrc'
 alias ez='vim ~/.zshrc'
+alias sz='source ~/.zshrc'
