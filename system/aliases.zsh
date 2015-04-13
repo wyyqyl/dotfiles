@@ -4,12 +4,6 @@ alias ll='ls -ahlF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# for tmux
-alias ta='tmux attach -t'
-alias tnew='tmux new -s'
-alias tls='tmux ls'
-alias tkill='tmux kill-session -t'
-
 alias yyupdate="sudo apt-get update && sudo apt-get dist-upgrade -y"
 alias yyapk="adb install -r "
 
