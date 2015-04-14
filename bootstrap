@@ -2,7 +2,7 @@
 #
 # bootstrap installs things.
 
-cd "$(dirname $(readlink -f ${BASH_SOURCE[0]}))"
+cd "$(dirname ${BASH_SOURCE[0]})"
 DOTFILES_ROOT=$(pwd)
 
 set -e
