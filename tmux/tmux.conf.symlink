@@ -58,3 +58,10 @@ set -g default-terminal "screen-256color"
 
 # set copy mode with vi key binding
 setw -g mode-keys vi
+
+# center the window list
+set -g status-justify centre
+
+# solarized color
+source $DOTFILES/tmux/solarized-dark.conf
+
