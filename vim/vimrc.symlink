@@ -57,6 +57,7 @@ set expandtab           " use spaces for tabs
 set autoindent
 set list
 set listchars=tab:▸\ ,eol:¬
+autocmd Filetype javascript setl ts=2 sts=2 sw=2
 " }}}
 " UI Layout {{{
 set number              " show line numbers
