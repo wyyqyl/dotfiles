@@ -8,12 +8,6 @@ bind C-a send-prefix
 unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
-# moving between panes
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
-
 # Pane resizing
 bind -r H resize-pane -L 5
 bind -r J resize-pane -D 5
@@ -29,12 +23,6 @@ bind -r C-h select-window -t :-
 bind -r C-l select-window -t :+
 
 # copy and paste keys
-# unbind [
-# bind Escape copy-mode
-unbind p
-bind p paste-buffer
-bind -t vi-copy 'v' begin-selection
-bind -t vi-copy 'y' copy-selection
 bind C-c run "tmux save-buffer - | xclip -i -sel clipboard"
 bind C-v run "tmux set-buffer \"$(xclip -o -sel clipboard)\"; tmux paste-buffer"
 
