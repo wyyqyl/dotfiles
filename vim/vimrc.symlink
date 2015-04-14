@@ -19,7 +19,7 @@ Plugin 'flazz/vim-colorschemes'
 "Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'wyyqyl/taglist.vim'
+Plugin 'majutsushi/tagbar'
 Plugin 'bling/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
@@ -148,11 +148,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:NERDTreeWinPos = "left"
 nnoremap <leader>n :NERDTreeToggle<cr>
 " }}}
-" Taglist {{{
-let Tlist_Use_Right_Window = 1
-let Tlist_Exit_OnlyWindow = 1
-let Tlist_Inc_Winwidth = 0
-nnoremap <leader>t :TlistToggle<cr>
+" Tagbar {{{
+nnoremap <leader>t :TagbarToggle<cr>
 " }}}
 " CtrlP {{{
 let g:ctrlp_map = '<c-p>'
