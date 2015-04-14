@@ -19,6 +19,9 @@ do
 done
 unset config_files
 
+# load functions
+autoload -U zmv
+
 # start tmux automatically
 if [[ -z "$TMUX" ]]
 then
