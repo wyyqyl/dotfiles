@@ -31,6 +31,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -144,11 +145,13 @@ endif
 " }}}
 " NERDTree {{{
 " open a NERDTree automatically when vim starts up if no files were specified
-"autocmd StdinReadPre * let s:std_in=1
-"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " close vim if the only window left open is a NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 let g:NERDTreeWinPos = "left"
+let g:NERDTreeMapJumpNextSibling = 'T'
+let g:NERDTreeMapJumpPrevSibling = 'S'
 nnoremap <leader>n :NERDTreeToggle<cr>
 " }}}
 " Tagbar {{{
