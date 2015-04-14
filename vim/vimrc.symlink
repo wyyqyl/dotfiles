@@ -180,5 +180,8 @@ let g:UltiSnipsListSnippets = '<c-l>'
 " vim-json {{{
 let g:vim_json_syntax_conceal = 0
 " }}}
+" vim-airline {{{
+let g:airline_theme = 'wombat'
+" }}}
 
 " vim:foldmethod=marker:foldlevel=0
