@@ -8,6 +8,8 @@
 [alias]
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	unstage = reset HEAD --
+	untrack = rm --cache --
+	undo = checkout --
 	co = checkout
 	br = branch
 	ci = commit
