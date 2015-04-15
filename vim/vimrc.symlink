@@ -32,6 +32,11 @@ Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-commentary'
+Plugin 'Raimondi/delimitMate'
+Plugin 'moll/vim-node'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -64,7 +69,7 @@ autocmd Filetype javascript setl ts=2 sts=2 sw=2
 set number              " show line numbers
 set showcmd             " show command in bottom bar
 set cursorline          " highlight current line
-set wildmenu
+"set wildmenu
 "set lazyredraw
 set showmatch           " higlight matching parenthesis
 set laststatus=2        " always show status line
