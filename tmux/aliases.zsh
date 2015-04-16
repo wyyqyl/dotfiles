@@ -1,5 +1,0 @@
-alias tat='tmux attach -t'
-alias tnew='tmux new -s'
-alias tls='tmux ls'
-alias tkill='tmux kill-session -t'
-alias tks='tmux kill-server'
