@@ -107,15 +107,18 @@ let mapleader=","
 nnoremap <leader>ev :vsp $MYVIMRC<cr>
 nnoremap <leader>ez :vsp ~/.zshrc<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>sz :source ~/.zshrc<cr>
 nnoremap <leader><space> :noh<cr>
-nnoremap <leader>s :mksession<cr>
 nnoremap <leader>1 :set number!<cr>
 vnoremap <leader>y "+y
-nnoremap <leader>p "+p
+nnoremap <leader>p o<esc>"+p
 nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
+nnoremap <leader>w :w<cr>
 nnoremap <leader>q :wq<cr>
-nnoremap <leader>j :%!python -m json.tool<cr>
+nnoremap <leader>json :%!python -m json.tool<cr>
+nnoremap <leader>ts :%s/\v[ \t]+$//g<cr>:w<cr>
+nnoremap <leader>bd :b#<bar>bd#<cr>
 " }}}
 " Window {{{
 nnoremap <c-j> <c-w>j
@@ -157,10 +160,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let g:NERDTreeWinPos = "left"
 let g:NERDTreeMapJumpNextSibling = 'T'
 let g:NERDTreeMapJumpPrevSibling = 'S'
-nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>nt :NERDTreeToggle<cr>
 " }}}
 " Tagbar {{{
-nnoremap <leader>t :TagbarToggle<cr>
+nnoremap <leader>tb :TagbarToggle<cr>
 " }}}
 " CtrlP {{{
 let g:ctrlp_map = '<c-p>'
@@ -173,10 +176,10 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_user_command = 'find %s -type f'
 " }}}
 " The Silver Searcher {{{
-nnoremap <leader>a :Ag -i<space>
+nnoremap <leader>ag :Ag -i<space>
 " }}}
 " Gundo {{{
-nnoremap <leader>u :GundoToggle<cr>
+nnoremap <leader>ud :GundoToggle<cr>
 " }}}
 " ultisnips {{{
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
