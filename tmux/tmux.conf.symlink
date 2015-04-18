@@ -62,6 +62,9 @@ setw -g mode-keys vi
 # center the window list
 set -g status-justify centre
 
+# turn off rautomatical ename 
+set -g allow-rename off
+
 # solarized color
 source $DOTFILES/tmux/solarized-dark.conf
 
