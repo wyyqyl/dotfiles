@@ -1,4 +1,4 @@
-logcat () {
+logcat() {
     app_package=$1
     shift
 
@@ -23,4 +23,12 @@ logcat () {
     done <<< $pids
     pattern=$(echo $pattern | cut -c 3-)
     exec adb $@ logcat | grep -e $pattern --color=never
+}
+
+# hex to decimal and vise versa
+h2d() {
+    echo "ibase=16; $@" | bc
+}
+d2h() {
+    echo "obase=16; $@" | bc
 }
