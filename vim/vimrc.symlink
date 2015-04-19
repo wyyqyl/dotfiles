@@ -115,7 +115,7 @@ nnoremap <leader>p o<esc>"+p
 nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
 nnoremap <leader>w :w<cr>
-nnoremap <leader>q :wq<cr>
+nnoremap <leader>q :q<cr>
 nnoremap <leader>json :%!python -m json.tool<cr>
 nnoremap <leader>ts :%s/\v[ \t]+$//g<cr>:w<cr>
 nnoremap <leader>bd :b#<bar>bd#<cr>
