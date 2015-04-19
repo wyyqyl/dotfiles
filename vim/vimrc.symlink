@@ -37,6 +37,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'moll/vim-node'
 Plugin 'marijnh/tern_for_vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -193,6 +195,9 @@ let g:vim_json_syntax_conceal = 0
 " vim-airline {{{
 let g:airline_theme = 'wombat'
 let g:airline_powerline_fonts = 1
+" }}}
+" vim-markdown {{{
+let g:vim_markdown_folding_disabled=1
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
