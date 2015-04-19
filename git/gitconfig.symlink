@@ -12,7 +12,7 @@
 	undo = checkout --
 	co = checkout
 	br = branch
-	ci = commit
+	ci = commit --verbose
 	st = status
 [color]
 	diff = auto
