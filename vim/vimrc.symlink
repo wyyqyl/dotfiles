@@ -132,6 +132,8 @@ nnoremap <c-l> <c-w>l
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 inoremap jk <esc>
+" allow more Ex commands be stored
+set history=512
 " }}}
 
 " Section: Plugins
