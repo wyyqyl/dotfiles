@@ -98,7 +98,9 @@ nnoremap <space> za
 " }}}
 " Line Shortcuts {{{
 nnoremap j gj
+nnoremap gj j
 nnoremap k gk
+nnoremap gk k
 "nnoremap B ^
 "nnoremap E $
 "nnoremap $ <nop>
@@ -107,6 +109,7 @@ nnoremap gV `[v`]
 " }}}
 " Leader Shortcuts {{{
 let mapleader=","
+noremap \ ,
 nnoremap <leader>ev :vsp $MYVIMRC<cr>
 nnoremap <leader>ez :vsp ~/.zshrc<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
