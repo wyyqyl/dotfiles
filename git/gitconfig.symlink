@@ -14,6 +14,11 @@
 	br = branch
 	ci = commit --verbose
 	st = status
+	sl = stash list
+	ss = stash save
+	sa = stash apply
+	sd = stash drop
+	stash-unapply = !git stash show -p | git apply -R
 [color]
 	diff = auto
 	status = auto
