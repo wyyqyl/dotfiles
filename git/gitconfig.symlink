@@ -19,6 +19,7 @@
 	sa = stash apply
 	sd = stash drop
 	stash-unapply = !git stash show -p | git apply -R
+	sll = stash show -p
 [color]
 	diff = auto
 	status = auto
