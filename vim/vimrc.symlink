@@ -41,6 +41,7 @@ Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
+Plugin 'suan/vim-instant-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -140,6 +141,7 @@ set backspace=indent,eol,start
 inoremap jk <esc>
 " allow more Ex commands be stored
 set history=512
+au BufRead,BufNewFile *.md set filetype=markdown
 " }}}
 
 " Section: Plugins
