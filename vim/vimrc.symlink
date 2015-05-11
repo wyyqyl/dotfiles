@@ -188,6 +188,7 @@ let g:ctrlp_user_command = 'find %s -type f'
 " }}}
 " The Silver Searcher {{{
 nnoremap <leader>ag :Ag -i<space>
+nnoremap <leader>agg :Ag -i <c-r><c-w>
 " }}}
 " Gundo {{{
 nnoremap <leader>ud :GundoToggle<cr>
