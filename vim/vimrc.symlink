@@ -42,6 +42,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-surround'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'rhysd/vim-clang-format'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -209,6 +210,19 @@ let g:airline_powerline_fonts = 1
 " }}}
 " vim-markdown {{{
 let g:vim_markdown_folding_disabled=1
+" }}}
+" vim-clang-format {{{
+let g:clang_format#style_options = {
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "C++11"}
+let g:clang_format#command = "clang-format-3.6"
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
