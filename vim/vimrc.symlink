@@ -17,6 +17,7 @@ call vundle#begin()
 Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'DoxygenToolkit.vim'
 Plugin 'dyng/ctrlsf.vim'
 Plugin 'elzr/vim-json'
@@ -25,7 +26,6 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'honza/vim-snippets'
-Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
 Plugin 'marijnh/tern_for_vim'
@@ -180,7 +180,7 @@ nnoremap <leader>tb :TagbarToggle<cr>
 " }}}
 " CtrlP {{{
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlPMRU'
+let g:ctrlp_cmd = 'CtrlPBuffer'
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\vtmp/|[\/]\.(git|hg|svn)$',
