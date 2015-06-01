@@ -18,6 +18,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'bling/vim-airline'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'DoxygenToolkit.vim'
+Plugin 'dyng/ctrlsf.vim'
 Plugin 'elzr/vim-json'
 Plugin 'fatih/vim-go'
 Plugin 'flazz/vim-colorschemes'
@@ -33,7 +34,6 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'Raimondi/delimitMate'
 Plugin 'rhysd/vim-clang-format'
-Plugin 'rking/ag.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
@@ -189,8 +189,9 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_user_command = 'find %s -type f'
 " }}}
 " The Silver Searcher {{{
-nnoremap <leader>ag :Ag -i<space>
-nnoremap <leader>agg :Ag -i <c-r><c-w><cr>
+nmap <leader>sf <Plug>CtrlSFPrompt
+nmap <leader>sF <Plug>CtrlSFCwordPath
+vmap <leader>sf <Plug>CtrlSFVwordExec
 " }}}
 " Gundo {{{
 nnoremap <leader>ud :GundoToggle<cr>
