@@ -131,6 +131,7 @@ nnoremap <leader>json :%!python -m json.tool<cr>
 nnoremap <leader>ts :%s/\v[ \t]+$//g<cr>:w<cr>
 nnoremap <leader>bd :b#<bar>bd#<cr>
 nnoremap <leader>su :w !sudo tee % > /dev/null<cr>
+nnoremap <leader>ct :!ctags -R<cr><cr>
 " }}}
 " Window {{{
 nnoremap <c-j> <c-w>j
