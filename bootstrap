@@ -94,6 +94,15 @@ link_file () {
     fi
 }
 
+install_dependencies () {
+    info 'installing git zsh vim tmux the_silver_searcher\n'
+    if [[ `uname` == 'Darwin' ]]; then
+        brew install git zsh vim tmux the_silver_searcher
+    else
+        sudo apt-get install git zsh vim tmux silversearcher-ag
+    fi
+}
+
 install_dotfiles () {
     info 'installing dotfiles'
 
@@ -131,6 +140,7 @@ install_zsh () {
     fi
 }
 
+install_dependencies
 install_dotfiles
 install_vundle
 install_zsh
