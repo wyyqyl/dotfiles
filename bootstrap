@@ -141,9 +141,9 @@ install_zsh () {
 }
 
 install_dependencies
-install_dotfiles
 install_vundle
 install_zsh
+install_dotfiles
 
 echo ''
 echo '  All installed!'
