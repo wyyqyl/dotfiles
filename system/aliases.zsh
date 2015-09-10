@@ -9,3 +9,5 @@ alias -s apk='adb install -r'
 alias ev='vim ~/.vimrc'
 alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
+
+alias mzip='zip -x "*.DS_Store" -r'
