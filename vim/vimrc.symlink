@@ -48,6 +48,7 @@ filetype plugin indent on    " required
 " Colors {{{
 if has("gui_running")
     set guioptions-=T  " no toolbar
+    set guifont=Source\ Code\ Pro\ for\ Powerline:h12
     colorscheme badwolf
 else
     set t_Co=256
