@@ -95,12 +95,15 @@ link_file () {
 }
 
 install_dependencies () {
-    info 'installing git zsh vim tmux the_silver_searcher\n'
+    info 'installing git zsh vim tmux the_silver_searcher...\n'
     if [[ `uname` == 'Darwin' ]]; then
         brew install git zsh vim tmux the_silver_searcher
     else
         sudo apt-get install git zsh vim tmux silversearcher-ag
     fi
+    info 'installing powerline font...\n'
+    git clone git@github.com:powerline/fonts.git .powerlinefonts
+    cd .powerlinefonts && ./install.sh
 }
 
 install_dotfiles () {
