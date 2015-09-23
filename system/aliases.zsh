@@ -11,3 +11,5 @@ alias ez='vim ~/.zshrc'
 alias sz='source ~/.zshrc'
 
 alias mzip='zip -x "*.DS_Store" -r'
+
+alias note="vim $HOME/Dropbox/stackedit/work/$(date +%Y)/$(date +%b)/$(date +%d).md"
