@@ -102,7 +102,7 @@ install_dependencies () {
         sudo apt-get install git zsh vim tmux silversearcher-ag
     fi
     info 'installing powerline font...\n'
-    git clone git@github.com:powerline/fonts.git .powerlinefonts
+    git clone git://github.com/powerline/fonts.git .powerlinefonts
     cd .powerlinefonts && ./install.sh
 }
 
