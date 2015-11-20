@@ -30,9 +30,9 @@
 	editor = vim
 [push]
 	default = simple
-[branch]
-	autosetuprebase = always
 [merge]
 	tool = vimdiff
 [mergetool]
 	prompt = false
+[pull]
+	rebase = true
