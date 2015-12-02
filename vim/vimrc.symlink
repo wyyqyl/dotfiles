@@ -156,6 +156,13 @@ nnoremap <leader>nt :NERDTreeToggle<cr>
 " }}}
 " Tagbar {{{
 nnoremap <leader>tb :TagbarToggle<cr>
+let g:tagbar_type_smali = {
+    \ 'ctagstype' : 'smali',
+    \ 'kinds' : [
+        \ 'f:field',
+        \ 'm:method',
+    \ ]
+\ }
 " }}}
 " CtrlP {{{
 let g:ctrlp_map = '<c-p>'
