@@ -113,6 +113,7 @@ nnoremap <leader>ts :%s/\v[ \t]+$//g<cr>:w<cr>
 nnoremap <leader>bd :b#<bar>bd#<cr>
 nnoremap <leader>su :w !sudo tee % > /dev/null<cr>
 nnoremap <leader>ct :!ctags -R<cr><cr>
+set pastetoggle =<leader>2
 " }}}
 " Window {{{
 nnoremap <c-j> <c-w>j
