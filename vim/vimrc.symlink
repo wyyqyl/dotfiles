@@ -28,7 +28,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'wesleyche/SrcExpl'
 Plug 'wyyqyl/vim-smali'
 call plug#end()
 " }}}
@@ -219,20 +218,6 @@ let g:go_highlight_structs = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
-" }}}"
-" SrcExpl {{{
-nnoremap <leader>se :SrcExplToggle<cr>
-let g:SrcExpl_winHeight = 8
-let g:SrcExpl_refreshTime = 100
-let g:SrcExpl_jumpKey = "<enter>"
-let g:SrcExpl_gobackKey = "<space>"
-let g:SrcExpl_isUpdateTags = 0
-let g:SrcExpl_pluginList = [
-        \ "__Tagbar__",
-        \ "NERD_tree_1"
-    \ ]
-let g:SrcExpl_prevDefKey = "<f3>"
-let g:SrcExpl_nextDefKey = "<f4>"
 " }}}"
 
 " vim:foldmethod=marker:foldlevel=0
