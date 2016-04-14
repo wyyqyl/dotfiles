@@ -15,8 +15,9 @@ bind -r k resize-pane -U 5
 bind -r l resize-pane -R 5
 
 # splitting panes
-bind | split-window -h
-bind - split-window -v
+bind | split-window -h -c "#{pane_current_path}"
+bind - split-window -v -c "#{pane_current_path}"
+bind c new-window -c "#{pane_current_path}"
 
 # cycle through window
 bind -r C-h select-window -t :-
