@@ -103,7 +103,7 @@ install_dependencies () {
     fi
     info 'installing powerline font...\n'
     git clone git://github.com/powerline/fonts.git .powerlinefonts
-    cd .powerlinefonts && ./install.sh
+    cd .powerlinefonts && ./install.sh && cd .. && rm -rf .powerlinefonts
 }
 
 install_dotfiles () {
