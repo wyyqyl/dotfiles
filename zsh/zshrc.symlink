@@ -30,5 +30,5 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
-plugins=(git zsh-syntax-highlighting command-not-found history-substring-search autojump)
+plugins=(git zsh-syntax-highlighting history-substring-search)
 source $ZSH/oh-my-zsh.sh
